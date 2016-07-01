@@ -1,4 +1,18 @@
 import React from 'react';
+import assign from 'lodash.assign';
+
+function getStatusSummary(cards, defaultData) {
+    return cards.reduce((data, card) => {
+        data = assign({}, data);
+        if (card.status) {
+            data[card.status] = data[card.status] + 1;
+            data.total = data.total + 1;
+        } else {
+            data = getStatusSummary(card.cards, assign({}, data));
+        }
+        return data;
+    }, defaultData);
+}
 
 export default function Card(props, context) {
     let className = 'card';
@@ -14,36 +28,25 @@ export default function Card(props, context) {
             query,
         });
 
-        cards = props.cards.reduce((data, card) => {
-            if (card.status) {
-                data[card.status] = data[card.status] + 1;
-                data.total = data[card.status] + 1;
-            }
-            return data;
-        }, {
+        cards = getStatusSummary(props.cards, {
             todo: 0,
             doing: 0,
             done: 0,
             dropped: 0,
             total: 0,
         });
-
         cards.todo = (cards.todo / cards.total) * 100;
         cards.doing = (cards.doing / cards.total) * 100;
         cards.done = (cards.done / cards.total) * 100;
         cards.dropped = (cards.dropped / cards.total) * 100;
 
         cards = [
-            <div key="dropped" className="status-dropped" style={{ height: cards.dropped }}></div>,
-            <div key="todo" className="status-todo" style={{ height: cards.todo }}></div>,
-            <div key="doing" className="status-doing" style={{ height: cards.doing }}></div>,
-            <div key="done" className="status-done" style={{ height: cards.done }}></div>,
+            <div key="dropped" className="status-dropped" style={{ height: `${cards.dropped}%` }}></div>,
+            <div key="todo" className="status-todo" style={{ height: `${cards.todo}%` }}></div>,
+            <div key="doing" className="status-doing" style={{ height: `${cards.doing}%` }}></div>,
+            <div key="done" className="status-done" style={{ height: `${cards.done}%` }}></div>,
         ];
     }
-    /*
-    props.cards.map( (child) => {
-        <div className={`status-${child.status}`}></div>
-    })*/
 
     return (
         <a href={link} className={className}>
