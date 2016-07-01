@@ -22,9 +22,9 @@ export default function Timeline(props, context) {
 
     return (
         <div className="timeline">
-            <a href={previousLink}>Previous</a>
-            <span>{timeline[props.moment]} ({props.moment + 1} / 6)</span>
-            <a href={nextLink}>Next</a>
+            <a href={previousLink}>← Previous</a>
+            <div>{timeline[props.moment]} • {props.moment + 1}/6</div>
+            <a href={nextLink}>Next →</a>
         </div>
     );
 }

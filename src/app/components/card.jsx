@@ -41,17 +41,19 @@ export default function Card(props, context) {
         cards.dropped = (cards.dropped / cards.total) * 100;
 
         cards = [
-            <div key="dropped" className="status-dropped" style={{ height: `${cards.dropped}%` }}></div>,
-            <div key="todo" className="status-todo" style={{ height: `${cards.todo}%` }}></div>,
-            <div key="doing" className="status-doing" style={{ height: `${cards.doing}%` }}></div>,
-            <div key="done" className="status-done" style={{ height: `${cards.done}%` }}></div>,
+            <div key="dropped" className="status status-dropped" style={{ width: `${cards.dropped}%` }}></div>,
+            <div key="todo" className="status status-todo" style={{ width: `${cards.todo}%` }}></div>,
+            <div key="doing" className="status status-doing" style={{ width: `${cards.doing}%` }}></div>,
+            <div key="done" className="status status-done" style={{ width: `${cards.done}%` }}></div>,
         ];
     }
 
     return (
-        <a href={link} className={className}>
+        <a href={link} className="card-block">
             <span>{props.label}</span>
-            <div className="background-container">{cards}</div>
+            <div className={className}>
+                <div className="background-container">{cards}</div>
+            </div>
         </a>
     );
 }

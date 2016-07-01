@@ -1,60 +1,193 @@
-// globals
+// variables
+//
+//          == ====
+green       = #2FD882
+turquoise   = #00BCD4
+blue        = #33A6FF
+purple      = #651FFF
+red         = #F44336
+orange      = #FFB300
+light-grey  = #f1f3f5
+medium-grey = #959EA5
+dark-grey   = #4F5B69
+darker-grey = #222C32
+
+red-light    = #F50057
+green-light  = #1DE9B6
+purple-light = #651FFF
+
+dropped = darker-grey
+todo    = red-light
+doing   = purple-light
+done    = green-light
+
+
+// global
+//
+// ======
 body
-    margin          0em
-    font-family     'Helvetica', sans-serif
-    padding-bottom  1em
+    margin         0
+    padding-bottom 1em
+    font-family    'Helvetica', sans-serif
+    font-size      16px
+    color          dark-grey
+    box-sizing     border-box
 
 h1
+    margin      0
     font-weight 300
-    margin-left 2em
-    color       rgb(70, 70, 70)
+    text-align  center
 
 h2
-    font-size       18pt
-    width           100%
-    text-align      center
-    font-weight     300
+    width       100%
+    font-size   1.5em
+    text-align  center
+    font-weight 300
+
+a
+a:hover
+a:visited
+    color           blue
+    text-decoration none
+    text-transform  uppercase
+    font-size       (13/16)em
 
 
+// header
+//
+// ======
+header
+    display          flex
+    justify-content  space-between
+    align-items      center
+    padding          2em
+    background-color blue
+    color            white
+
+    .prev
+    .next
+        flex 1
+
+        a
+            color white
+
+    h1
+        flex 4
+
+
+// footer
+//
+// ======
+footer
+    z-index          100
+    display          flex
+    position         fixed
+    bottom           0
+    left             0
+    right            0
+    padding          .5rem 1rem
+    background-color light-grey
+    font-size        (12/16)em
+    font-style       italic
+    color            medium-grey
+
+    .legend
+        display     flex
+        align-items center
+        padding     0 1rem
+
+        &:before
+            content       ""
+            width         1em
+            height        1em
+            display       block
+            margin-right  .5em
+            border-radius 50%
+
+        &.dropped:before
+            background-color dropped
+        &.todo:before
+            background-color todo
+        &.doing:before
+            background-color doing
+        &.done:before
+            background-color done
+
+
+// cards
+//
+// =====
 .cards-list
-    display flex
+    display         flex
     justify-content space-around
-    flex-wrap wrap
+    flex-wrap       wrap
+    margin          2em
+
+    & > a
+        display         flex
+        justify-content space-around
+        align-items     center
+        padding         1em
+        padding-left    2em
+        border-radius   20rem
+        color           dark-grey
+
+        &:hover
+            background-color light-grey
+
+        &:visited
+            color dark-grey
+
+        span
+            width        10vw
+            margin-right 1em
 
 .card
-    width 250px
-    height 250px
-    border-radius 125px
-    overflow auto
-    display flex
-    flex-direction column
-    justify-content space-around;
-    position relative
-
-    span
-        text-align center
-        z-index 10
+    display         flex
+    flex-direction  column
+    justify-content space-around
+    width           75vw
+    height          4em
+    border-radius   20rem
+    box-shadow      0 4px 12px rgba(0,0,0,.19), 0 1px 3px rgba(0,0,0,.12)
+    overflow        auto
 
     .background-container
-        position absolute
-        width 100%
-        height 100%
-        top 0
-        left 0
+        display flex
         z-index 1
+        width   100%
+        height  100%
 
+.status
+    height 100%
 .status-done
-    background-color green
+    background-color done
 .status-doing
-    background-color orange
+    background-color doing
 .status-todo
-    background-color red
+    background-color todo
 .status-dropped
-    background-color grey
+    background-color dropped
 
+
+// timeline
+//
+// ======
 .timeline
-    text-align center
+    display          flex
+    align-items      center
+    justify-content  space-between
+    background-color light-grey
 
-    *
-        display inline-block
-        margin 0 10px
+    a
+        padding    1rem 2rem
+        flex       1
+
+        &:hover
+            background-color darken(light-grey, 5%)
+
+        &:last-child
+            text-align right
+
+    div
+        padding 0 2em

@@ -58,7 +58,7 @@ export class Application extends React.Component {
                 pathname: link,
                 query: location.query,
             });
-            previousLink = <a href={link}>Prev</a>;
+            previousLink = <a href={link}>Back</a>;
         } else {
             cardInfo = {
                 label: 'Milestone Viewer',
@@ -73,7 +73,11 @@ export class Application extends React.Component {
 
         return (
             <div className="container">
-                <h1>{previousLink}{cardInfo.label}</h1>
+                <header>
+                    <div className="prev">{previousLink}</div>
+                    <h1>{cardInfo.label}</h1>
+                    <div className="next"></div>
+                </header>
                 <Timeline timeline={this.props.data} moment={this.state.moment} history={this.history} />
                 <div className="cards-list">
                 {error}
@@ -81,6 +85,12 @@ export class Application extends React.Component {
                     cards.map((card, index) => <Card key={index} {...card} index={index} urlPrefix={path} history={this.history} />)
                 }
                 </div>
+                <footer>
+                    <div className="legend dropped">Dropped</div>
+                    <div className="legend todo">To-Do</div>
+                    <div className="legend doing">Doing</div>
+                    <div className="legend done">Done</div>
+                </footer>
             </div>
         );
     }
