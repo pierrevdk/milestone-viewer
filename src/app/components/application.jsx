@@ -36,15 +36,15 @@ export class Application extends React.Component {
         const path = this.state.path;
         const moment = this.state.moment;
 
-        let cardInfo = this.props.data[moment].cards;
+        let cardInfo = this.props.data[moment];
         let error = null;
         let previousLink = null;
         if (path !== '') {
             const indexes = path.split('/').map((index) => parseInt(index, 10));
 
             for (let i = 0; i < indexes.length; i++) {
-                if (cardInfo[indexes[i]]) {
-                    cardInfo = cardInfo[indexes[i]];
+                if (cardInfo.cards[indexes[i]]) {
+                    cardInfo = cardInfo.cards[indexes[i]];
                 } else {
                     error = 'Invalid path';
                 }
@@ -62,7 +62,7 @@ export class Application extends React.Component {
         } else {
             cardInfo = {
                 label: 'Milestone Viewer',
-                cards: cardInfo,
+                cards: cardInfo.cards,
             };
         }
 
