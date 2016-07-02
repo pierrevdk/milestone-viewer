@@ -78,11 +78,20 @@ export class Application extends React.Component {
                     <h1>{cardInfo.label}</h1>
                     <div className="next"></div>
                 </header>
-                <Timeline timeline={this.props.data} moment={this.state.moment} history={this.history} />
+                <Timeline
+                    timeline={this.props.data}
+                    moment={this.state.moment}
+                />
                 <div className="cards-list">
                 {error}
                 {
-                    cards.map((card, index) => <Card key={index} {...card} index={index} urlPrefix={path} history={this.history} />)
+                    cards.map((card, index) =>
+                        <Card
+                            key={index}
+                            {...card}
+                            index={index}
+                            urlPrefix={path}
+                        />)
                 }
                 </div>
                 <footer>
