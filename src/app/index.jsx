@@ -12,8 +12,7 @@ import ReactDOM from 'react-dom';
 // import main application components
 import Application from './components/application';
 
-
-import data from './data/m2';
+import data from './data/m2/index';
 
 // rendering our application
 ReactDOM.render(<Application data={data} />, document.getElementById('app'));
