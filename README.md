@@ -1,32 +1,26 @@
-# Production
+Milestone viewer is a tool to visualize a Cozy milestone's progress.
 
-## Hack (without dev dependencies)
+# Development
 
 ```shell
+git clone https://github.com/jsilvestre/milestone-viewer.git
 npm install
 npm run dev
 ```
+You can see the result on `http://localhost:8080/`.
 
-http://localhost:8080
+# Build
 
-# Hack
+```shell
+git clone https://github.com/jsilvestre/milestone-viewer.git
+npm install
+npm run build
+```
+The output is in the `dist/` directory.
 
 ## Linter / ESLint
-We use here a custom airbnb based eslinter with React plugin. You can find the configurations in the [.eslintrc.json](./eslintrc.json).
+We use here a custom airbnb based eslinter with React plugins.
 
-You can run the linter by using:
 ```shell
 npm run eslint
 ```
-
-## Build with webpack using
-
-You will need all dev dependencies: ```npm install```
-
-Building scripts are defined to be used as npm scripts:
-
-* Use ```npm run build``` to build once using webpack
-
-* Use ```npm run build:watch``` to build again each time a change is detected
-
-The webpack configutions are defined in the [webpack.config.js](./webpack.config.js).
