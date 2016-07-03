@@ -4,11 +4,27 @@ import React from 'react';
 import Timeline from './timeline';
 import Card from './card';
 
+const INVALID_PATH_CARD = {
+    label: 'The path is invalid',
+    cards: [],
+};
+
 function locationToState(location, data) {
     const { pathname, query } = location;
+
+    // Remove inconvenient '#'.
+    const rawPath = pathname.substr(1).trim();
+
+    // // Extract tree path from pathname.
+    const path = rawPath ?
+                 rawPath.split('/').map(index => parseInt(index, 10)) : [];
+
+    // Moment must always exist, otherwise default to instant 0.
+    const moment = query.moment < data.length ? parseInt(query.moment, 10) : 0;
+
     return {
-        path: pathname.substr(1),
-        moment: query.moment < data.length ? parseInt(query.moment, 10) : 0,
+        moment,
+        path,
     };
 }
 
@@ -32,43 +48,63 @@ export class Application extends React.Component {
         });
     }
 
-    render() {
-        const path = this.state.path;
-        const moment = this.state.moment;
+    getCardInfo() {
+        const { path, moment } = this.state;
 
+        // Extract all indexes from path.
+        // Get the path's leaf if it exists, error otherwise.
         let cardInfo = this.props.data[moment];
-        let error = null;
-        let previousLink = null;
-        if (path !== '') {
-            const indexes = path.split('/').map((index) => parseInt(index, 10));
-
-            for (let i = 0; i < indexes.length; i++) {
-                if (cardInfo.cards[indexes[i]]) {
-                    cardInfo = cardInfo.cards[indexes[i]];
+        try {
+            for (let i = 0; i < path.length; i++) {
+                if (cardInfo.cards[path[i]]) {
+                    cardInfo = cardInfo.cards[path[i]];
                 } else {
-                    error = 'Invalid path';
+                    throw new Error('Invalid path');
                 }
             }
-
-            let link = [].concat(indexes);
-            link.pop();
-            link = link.join('/');
-            const location = this.history.getCurrentLocation();
-            link = this.history.createHref({
-                pathname: link,
-                query: location.query,
-            });
-            previousLink = <a href={link}>Back</a>;
-        } else {
-            cardInfo = {
-                label: 'Milestone Viewer',
-                cards: cardInfo.cards,
-            };
+        } catch (error) {
+            cardInfo = INVALID_PATH_CARD;
         }
 
-        let cards = cardInfo.cards;
-        if (error) {
-            cards = [];
+        return cardInfo;
+    }
+
+    getPreviousLink() {
+        // Remove last path's element.
+        let path = [].concat(this.state.path);
+        path.pop();
+        path = path.join('/');
+
+        // Create the previous link if current card is not the root.
+        let link = null;
+        if (path.length >= 0) {
+            const location = this.history.getCurrentLocation();
+            const href = this.history.createHref({
+                pathname: path,
+                query: location.query,
+            });
+
+            link = <a href={href}>Back</a>;
+        }
+
+        return link;
+    }
+
+    getTimeline() {
+        return this.props.data.map(moment => moment.date);
+    }
+
+    render() {
+        const { path, moment } = this.state;
+
+        const timeline = this.getTimeline();
+
+        const cardInfo = this.getCardInfo();
+        const previousLink = this.getPreviousLink();
+
+        // Set app's title if current card is root.
+        if (path.length === 0) {
+            cardInfo.label = 'Milestone Viewer';
         }
 
         return (
@@ -79,18 +115,17 @@ export class Application extends React.Component {
                     <div className="next"></div>
                 </header>
                 <Timeline
-                    timeline={this.props.data}
-                    moment={this.state.moment}
+                    timeline={timeline}
+                    moment={moment}
                 />
                 <div className="cards-list">
-                {error}
                 {
-                    cards.map((card, index) =>
+                    cardInfo.cards.map((card, index) =>
                         <Card
                             key={index}
-                            {...card}
                             index={index}
-                            urlPrefix={path}
+                            path={path}
+                            {...card}
                         />)
                 }
                 </div>

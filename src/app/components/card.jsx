@@ -23,8 +23,9 @@ export default function Card(props, context) {
         className = `${className} status-${props.status}`;
         link = null;
     } else {
+        const urlPrefix = props.path.join('/');
         link = context.history.createHref({
-            pathname: `${props.urlPrefix}/${props.index}`,
+            pathname: `${urlPrefix}/${props.index}`,
             query,
         });
 
@@ -78,7 +79,7 @@ Card.propTypes = {
     label: React.PropTypes.string.isRequired,
     status: React.PropTypes.string,
     cards: React.PropTypes.array,
-    urlPrefix: React.PropTypes.string.isRequired,
+    path: React.PropTypes.array.isRequired,
     index: React.PropTypes.number.isRequired,
 };
 

@@ -1,15 +1,15 @@
 import React from 'react';
 
 export default function Timeline(props, context) {
-    const timeline = props.timeline.map((moment) => moment.date);
+    const { timeline, moment } = props;
     const location = context.history.getCurrentLocation();
 
     let previousLink;
     let previousClass;
-    if (props.moment > 0) {
+    if (moment > 0) {
         previousLink = context.history.createHref({
             pathname: location.pathname,
-            query: { moment: props.moment - 1 },
+            query: { moment: moment - 1 },
         });
     } else {
         previousClass = 'disabled';
@@ -17,10 +17,10 @@ export default function Timeline(props, context) {
 
     let nextLink;
     let nextClass;
-    if (props.moment + 1 < timeline.length) {
+    if (moment + 1 < timeline.length) {
         nextLink = context.history.createHref({
             pathname: location.pathname,
-            query: { moment: props.moment + 1 },
+            query: { moment: moment + 1 },
         });
     } else {
         nextClass = 'disabled';
@@ -29,7 +29,7 @@ export default function Timeline(props, context) {
     return (
         <div className="timeline">
             <a href={previousLink} className={previousClass}>← Previous</a>
-            <div>{timeline[props.moment]} • {props.moment + 1}/6</div>
+            <div>{timeline[moment]} • {moment + 1}/6</div>
             <a href={nextLink} className={nextClass}>Next →</a>
         </div>
     );
