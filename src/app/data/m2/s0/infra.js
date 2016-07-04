@@ -1,27 +1,45 @@
 /* eslint-disable max-len */
 export default [
-    { label: 'IVA', status: 'todo' },
-    { label: 'Mylen V2', status: 'todo' },
     {
-        label: 'Images auto-hébergés',
+        label: 'IVA',
         cards: [
-            { label: 'Paquet Debian', status: 'done' },
-            { label: 'Rasperry Pi 2', status: 'done' },
-            { label: 'Rasperry Pi 3', status: 'done' },
-            { label: 'Virtualbox', status: 'done' },
-            { label: 'Vagrant', status: 'todo' },
+            { label: 'Recherche de Cozy (GUI)', status: 'todo' },
+            { label: 'Création de Cozy (GUI)', status: 'todo' },
+            { label: 'Visualisation inactivés/inactifs (GUI)', status: 'todo' },
+            { label: 'Information cycle de vie (GUI)', status: 'todo' },
+            { label: 'Mise en production', status: 'todo' },
+        ],
+    },
+    { label: 'Mylen V2',
+        cards: [
+            { label: 'Création d\'une VM via l\'API', status: 'todo' },
+            { label: 'Provisioning d\'un Cozy', status: 'todo' },
+            { label: 'Suppression d\'une VM via l\'API', status: 'todo' },
+        ],
+    },
+    { label: 'Gandi',
+        cards: [
+            { label: 'Création d\'une VM via l\'API', status: 'todo' },
+            { label: 'Provisioning d\'un Cozy', status: 'todo' },
+            { label: 'Suppression d\'une VM via l\'API', status: 'todo' },
+        ],
+    },
+    { label: 'Hébergement Bêta sur Public Cloud',
+        cards: [
+            { label: 'Création d\'un conteneur', status: 'todo' },
+            { label: 'Provisioning d\'un Cozy', status: 'todo' },
+            { label: 'Suppression d\'une conteneur', status: 'todo' },
+            { label: 'Instrumentalisation via l\'API', status: 'todo' },
         ],
     },
     {
-        label: 'Images hébergeurs',
+        label: 'Images auto-hébergés',
         cards: [
-            { label: 'OVH', status: 'done' },
-            { label: 'Scaleway', status: 'done' },
-            { label: 'SWHosting', status: 'done' },
-            { label: 'PingFiles', status: 'done' },
-            { label: 'Digital Ocean', status: 'dropped' },
+            { label: 'Rasperry Pi 2', status: 'todo' },
+            { label: 'Rasperry Pi 3', status: 'todo' },
+            { label: 'Virtualbox', status: 'todo' },
         ],
     },
     { label: 'Gestion du cycle de vie des Cozy', status: 'todo' },
     { label: 'RUN', status: 'doing' },
-]
+];
