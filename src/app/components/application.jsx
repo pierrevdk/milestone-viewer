@@ -20,7 +20,8 @@ function locationToState(location, data) {
                  rawPath.split('/').map(index => parseInt(index, 10)) : [];
 
     // Moment must always exist, otherwise default to instant 0.
-    const moment = query.moment < data.length ? parseInt(query.moment, 10) : 0;
+    const moment = query.moment < data.length ?
+                   parseInt(query.moment, 10) : data.length - 1;
 
     return {
         moment,
