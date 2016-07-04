@@ -8,7 +8,6 @@ export default [
             { label: 'Liste des messages', status: 'done' },
             { label: 'Panneau de droite', status: 'done' },
             { label: 'Suppression', status: 'done' },
-            { label: 'Panneau de droite', status: 'done' },
             { label: 'Gestion Lu / Non Lu', status: 'doing' },
             { label: 'Déplacer un message', status: 'todo' },
             { label: 'Configuration', status: 'todo' },
@@ -45,7 +44,16 @@ export default [
         ],
     },
     {
-        label: 'Partage',
+        label: 'Partage évènements',
+        cards: [
+            { label: 'Modèle théorique', status: 'done' },
+            { label: 'Data system', status: 'done' },
+            { label: 'Proxy', status: 'done' },
+            { label: 'Calendar', status: 'done' },
+        ],
+    },
+    {
+        label: 'Partage calendrier',
         cards: [
             { label: 'Modèle théorique', status: 'doing' },
             { label: 'Data system', status: 'todo' },
@@ -55,7 +63,7 @@ export default [
     },
     { label: 'Sécurité', status: 'todo'},
     {
-        label: 'Maintenance Calendrier / Files',
+        label: 'Maintenance Calendrier',
         cards: [
             { label: 'Homogénéisation du build', status: 'done' },
             { label: 'Couleur des calendriers', status: 'done' },
@@ -65,14 +73,8 @@ export default [
             { label: 'Evènements récurrents', status: 'dropped' },
         ],
     },
-    {
-        label: 'Etude de mutualisation',
-        cards: [
-            { label: 'Etape 1', status: 'todo' },
-            { label: 'Etape 2', status: 'todo' },
-            { label: 'Etape 3', status: 'todo' },
-        ],
-    },
+    { label: 'Maintenance Fichier', status: 'todo' },
+    { label: 'Etude de mutualisation', status: 'doing' },
     { label: 'Rework UX Home', status: 'dropped'},
     { label: 'Augmenter la communauté de développeur', status: 'dropped'},
 ]
