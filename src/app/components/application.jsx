@@ -113,6 +113,7 @@ export class Application extends React.Component {
                 <header>
                     <div className="prev">{previousLink}</div>
                     <h1>{cardInfo.label}</h1>
+                    <div>Sprint {moment + 1} / 6</div>
                     <div className="next"></div>
                 </header>
                 <Timeline
