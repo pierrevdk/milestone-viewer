@@ -78,7 +78,7 @@ export class Application extends React.Component {
 
         // Create the previous link if current card is not the root.
         let link = null;
-        if (path.length >= 0) {
+        if (this.state.path.length > 0) {
             const location = this.history.getCurrentLocation();
             const href = this.history.createHref({
                 pathname: path,
