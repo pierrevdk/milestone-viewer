@@ -44,10 +44,10 @@ export default function Timeline(props, context) {
 
     return (
         <div className="timeline">
-            <a href={firstLink} className={firstClass}>First</a>
+            <a href={firstLink} className={firstClass}>|← First</a>
             <a href={previousLink} className={previousClass}>← Previous</a>
             <a href={nextLink} className={nextClass}>Next →</a>
-            <a href={lastLink} className={lastClass}>Last</a>
+            <a href={lastLink} className={lastClass}>Last →|</a>
         </div>
     );
 }

@@ -112,9 +112,11 @@ export class Application extends React.Component {
             <div className="container">
                 <header>
                     <div className="prev">{previousLink}</div>
-                    <h1>{cardInfo.label}</h1>
-                    <div>Sprint {moment + 1} / 6</div>
-                    <div className="next"></div>
+                    <div className="title">
+                        <h1>{cardInfo.label}</h1>
+                        <div className="subtitle">Sprint {moment + 1}/6</div>
+                    </div>
+                    <div className="placeholder"></div>
                 </header>
                 <Timeline
                     timeline={timeline}
