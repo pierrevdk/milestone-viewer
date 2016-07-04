@@ -65,8 +65,13 @@ export default function Card(props, context) {
         ];
     }
 
+    let cardClass = 'card-block';
+    if (!props.cards || props.cards.length === 0) {
+        cardClass += ' unlinked';
+    }
+
     return (
-        <a href={link} className="card-block">
+        <a href={link} className={cardClass}>
             <span>{props.label}</span>
             <div className={className}>
                 <div className="background-container">{cards}</div>
