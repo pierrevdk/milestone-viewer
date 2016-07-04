@@ -25,21 +25,41 @@ a:visited {
   text-transform: uppercase;
   font-size: 0.8125em;
 }
+a.disabled {
+  color: #959ea5;
+  cursor: default;
+}
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2em;
+  height: 95px;
   background-color: #33a6ff;
   color: #fff;
 }
 header .prev,
-header .next {
+header .placeholder {
   flex: 1;
 }
 header .prev a,
-header .next a {
+header .placeholder a {
+  display: block;
+  padding: 2.5rem 2rem;
   color: #fff;
+}
+header .prev a:hover,
+header .placeholder a:hover {
+  background-color: rgba(0,0,0,0.15);
+}
+header .title {
+  text-align: center;
+  padding: 0 2rem;
+}
+header .subtitle {
+  opacity: 0.5;
+  padding-top: 0.25em;
+  color: #000;
+  text-transform: uppercase;
 }
 header h1 {
   flex: 4;
@@ -77,7 +97,7 @@ footer .legend.todo:before {
   background-color: #f50057;
 }
 footer .legend.doing:before {
-  background-color: #651fff;
+  background-color: #ffa000;
 }
 footer .legend.done:before {
   background-color: #1de9b6;
@@ -95,13 +115,16 @@ footer .legend.done:before {
   padding: 1em;
   padding-left: 2em;
   border-radius: 20rem;
-  color: #4f5b69;
 }
 .cards-list > a:hover {
   background-color: #f1f3f5;
+  text-decoration: underline;
 }
-.cards-list > a:visited {
+.cards-list > a.unlinked {
   color: #4f5b69;
+}
+.cards-list > a.unlinked:hover {
+  text-decoration: none;
 }
 .cards-list > a span {
   width: 10vw;
@@ -130,7 +153,7 @@ footer .legend.done:before {
   background-color: #1de9b6;
 }
 .status-doing {
-  background-color: #651fff;
+  background-color: #ffa000;
 }
 .status-todo {
   background-color: #f50057;
@@ -145,18 +168,24 @@ footer .legend.done:before {
   background-color: #f1f3f5;
 }
 .timeline a {
-  padding: 1rem 2rem;
+  padding: 0.75rem 2rem;
   flex: 1;
+  text-align: center;
 }
 .timeline a:hover {
   background-color: #e3e7eb;
+}
+.timeline a:first-child {
+  text-align: left;
 }
 .timeline a:last-child {
   text-align: right;
 }
 .timeline a.disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
+  opacity: 0.5;
+}
+.timeline a.disabled:hover {
+  background-color: transparent;
 }
 .timeline div {
   padding: 0 2em;
