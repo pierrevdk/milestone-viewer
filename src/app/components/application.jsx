@@ -130,10 +130,10 @@ export class Application extends React.Component {
                 }
                 </div>
                 <footer>
-                    <div className="legend dropped">Dropped</div>
-                    <div className="legend todo">To-Do</div>
-                    <div className="legend doing">Doing</div>
                     <div className="legend done">Done</div>
+                    <div className="legend doing">Doing</div>
+                    <div className="legend todo">To-Do</div>
+                    <div className="legend dropped">Dropped</div>
                 </footer>
             </div>
         );
