@@ -1,7 +1,51 @@
 /* eslint-disable max-len */
 export default [
-    { label: 'Livre Blanc', status: 'todo'},
-    { label: 'Plan marketting', status: 'todo'},
+    { label: 'B to B',
+        cards: [
+            { label: 'Page sur le site', status: 'todo' },
+            { label: 'Brochure', status: 'todo' },
+            { label: 'Choix des évenements', status: 'doing' },
+        ],
+    },
+    { label: 'Communauté',
+        cards: [
+            { label: 'Meetup', status: 'doing' },
+            { label: 'Newsletter', status: 'doing' },
+            { label: 'Choix des évenements', status: 'doing' },
+            { label: 'Réseaux sociaux', status: 'doing' },
+        ],
+    },
+    { label: 'Livre blanc',
+        cards: [
+            { label: 'Interviews', status: 'doing' },
+            { label: 'Mise en forme interview', status: 'todo' },
+            { label: 'Relecture framasoft', status: 'dropped' },
+        ],
+    },
+    { label: 'Plan marketting', status: 'doing'},
+    {
+        label: 'Evenements',
+        cards: [
+            {
+                label: 'Conférences',
+                cards: [
+                    { label: 'Web2day', status: 'done' },
+                    { label: 'Pas sage en seine', status: 'done' },
+                    { label: 'Digitech', status: 'done' },
+                    { label: 'Forum du numérique', status: 'done' },
+                ],
+            },
+            {
+                label: 'Stands',
+                cards: [
+                    { label: 'Futur en seine', status: 'done' },
+                    { label: 'Innovation forum', status: 'done' },
+                    { label: 'Forum du numérique', status: 'done' },
+                    { label: 'Vivatech', status: 'done' },
+                ],
+            },
+        ],
+    },
     {
         label: 'Identité de Cozy',
         cards: [
@@ -14,4 +58,5 @@ export default [
             { label: '...', status: 'todo' },
         ],
     },
+    { label: 'Annonce de la levée', status: 'done'},
 ]
