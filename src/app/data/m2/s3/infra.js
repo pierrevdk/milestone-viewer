@@ -39,6 +39,7 @@ export default [
             { label: 'Rasperry Pi 3', status: 'done' },
             { label: 'Virtualbox', status: 'done' },
             { label: 'Pine64', status: 'dropped' },
+            { label: 'Génération automatique', status: 'dropped' },
         ],
     },
     { label: 'Gestion du cycle de vie des Cozy', status: 'todo' },
