@@ -13,7 +13,7 @@ export default [
         cards: infra
     },
     {
-        label: "Market",
+        label: "Marketing",
         cards: market
     }
 ]
