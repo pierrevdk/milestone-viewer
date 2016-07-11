@@ -67,9 +67,9 @@ export default [
         cards: [
             { label: 'Homogénéisation du build', status: 'done' },
             { label: 'Couleur des calendriers', status: 'done' },
-            { label: 'Import', status: 'done' },
-            { label: 'Liste', status: 'done' },
-            { label: 'Synchronisation', status: 'done' },
+            { label: 'Import', status: 'doing' },
+            { label: 'Liste', status: 'doing' },
+            { label: 'Synchronisation', status: 'doing' },
             { label: 'Evènements récurrents', status: 'dropped' },
         ],
     },
