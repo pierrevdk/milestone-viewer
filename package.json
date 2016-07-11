@@ -6,7 +6,8 @@
   "scripts": {
     "eslint": "./node_modules/.bin/eslint src/client/app/*",
     "build": "webpack --progress --colors",
-    "dev": "webpack-dev-server --progress --colors"
+    "dev": "webpack-dev-server --progress --colors",
+    "deploy": "npm run build; git checkout gh-pages; cp dist/* .; git add .; git commit -m 'Build'; git push origin gh-pages; git checkout master"
   },
   "author": "",
   "license": "",

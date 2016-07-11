@@ -23,8 +23,9 @@ export default function Card(props, context) {
         className = `${className} status-${props.status}`;
         link = null;
     } else {
+        const urlPrefix = props.path.join('/');
         link = context.history.createHref({
-            pathname: `${props.urlPrefix}/${props.index}`,
+            pathname: `${urlPrefix}/${props.index}`,
             query,
         });
 
@@ -64,8 +65,13 @@ export default function Card(props, context) {
         ];
     }
 
+    let cardClass = 'card-block';
+    if (!props.cards || props.cards.length === 0) {
+        cardClass += ' unlinked';
+    }
+
     return (
-        <a href={link} className="card-block">
+        <a href={link} className={cardClass}>
             <span>{props.label}</span>
             <div className={className}>
                 <div className="background-container">{cards}</div>
@@ -78,7 +84,7 @@ Card.propTypes = {
     label: React.PropTypes.string.isRequired,
     status: React.PropTypes.string,
     cards: React.PropTypes.array,
-    urlPrefix: React.PropTypes.string.isRequired,
+    path: React.PropTypes.array.isRequired,
     index: React.PropTypes.number.isRequired,
 };
 
