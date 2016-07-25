@@ -2,7 +2,7 @@
 export default [
     { label: 'B to B',
         cards: [
-            { label: 'Page sur le site', status: 'todo' },
+            { label: 'Page sur le site', status: 'done' },
             { label: 'Brochure', status: 'todo' },
             { label: 'Choix des évenements', status: 'doing' },
         ],
@@ -22,7 +22,7 @@ export default [
             { label: 'Relecture framasoft', status: 'dropped' },
         ],
     },
-    { label: 'Plan marketting', status: 'doing'},
+    { label: 'Plan marketing', status: 'doing'},
     {
         label: 'Evenements',
         cards: [
@@ -51,7 +51,7 @@ export default [
         cards: [
             { label: 'Interviews utilisateurs', status: 'doing' },
             { label: 'Qui est Cozy ?', status: 'doing' },
-            { label: 'Charte graphique', status: 'todo' },
+            { label: 'Charte graphique', status: 'doing' },
             { label: 'Charte du ton à employer', status: 'todo' },
             { label: 'Logo', status: 'todo' },
             { label: 'Nom du projet', status: 'todo' },
