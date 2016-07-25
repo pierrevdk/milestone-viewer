@@ -5,15 +5,15 @@ import infra from './infra';
 
 export default [
     {
-        label: "Software",
-        cards: software
+        label: 'Software',
+        cards: software,
     },
     {
-        label: "Infra",
-        cards: infra
+        label: 'Infra',
+        cards: infra,
     },
     {
-        label: "Marketing",
-        cards: market
-    }
-]
+        label: 'Marketing',
+        cards: market,
+    },
+];
