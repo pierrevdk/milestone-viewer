@@ -1,6 +1,7 @@
 import s0 from './s0/index';
 import s3 from './s3/index';
 import s4 from './s4/index';
+import s5 from './s5/index';
 
 export default [
     {
