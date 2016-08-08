@@ -33,6 +33,7 @@ export default [
                     { label: 'Pas sage en seine', status: 'done' },
                     { label: 'Digitech', status: 'done' },
                     { label: 'Forum du numérique', status: 'done' },
+                    { label: 'MyData', status: 'todo' },
                 ],
             },
             {
