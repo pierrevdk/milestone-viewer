@@ -3,8 +3,8 @@ export default [
     { label: 'B to B',
         cards: [
             { label: 'Page sur le site', status: 'done' },
-            { label: 'Brochure', status: 'todo' },
-            { label: 'Choix des évenements', status: 'doing' },
+            { label: 'Brochure', status: 'dropped' },
+            { label: 'Choix des évenements', status: 'done' },
         ],
     },
     { label: 'Communauté',
@@ -33,6 +33,7 @@ export default [
                     { label: 'Pas sage en seine', status: 'done' },
                     { label: 'Digitech', status: 'done' },
                     { label: 'Forum du numérique', status: 'done' },
+                    { label: 'MyData', status: 'todo' },
                 ],
             },
             {
