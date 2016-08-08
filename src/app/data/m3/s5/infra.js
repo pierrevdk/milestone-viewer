@@ -27,10 +27,10 @@ export default [
     },
     { label: 'Hébergement Bêta sur Public Cloud',
         cards: [
-            { label: 'Création d\'un conteneur', status: 'doing' },
-            { label: 'Provisioning d\'un Cozy', status: 'todo' },
-            { label: 'Suppression d\'une conteneur', status: 'todo' },
-            { label: 'Instrumentalisation via l\'API', status: 'todo' },
+            { label: 'Création d\'un conteneur', status: 'dropped' },
+            { label: 'Provisioning d\'un Cozy', status: 'dropped' },
+            { label: 'Suppression d\'une conteneur', status: 'dropped' },
+            { label: 'Instrumentalisation via l\'API', status: 'dropped' },
         ],
     },
     {
