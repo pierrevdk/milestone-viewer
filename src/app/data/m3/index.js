@@ -8,11 +8,15 @@ export default [
         cards: s0,
     },
     {
-        date: '2016-05-30',
+        date: '2016-07-08',
         cards: s3,
     },
     {
-        date: '2016-05-30',
+        date: '2016-07-22',
         cards: s4,
+    },
+    {
+        date: '2016-08-05',
+        cards: s5,
     },
 ];
