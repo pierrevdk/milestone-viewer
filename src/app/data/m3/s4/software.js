@@ -8,7 +8,7 @@ export default [
             { label: 'Liste des messages', status: 'done' },
             { label: 'Panneau de droite', status: 'done' },
             { label: 'Suppression', status: 'done' },
-            { label: 'Migration redux', status: 'done' },
+            { label: 'Migration redux', status: 'todo' },
             { label: 'Gestion Lu / Non Lu', status: 'doing' },
             { label: 'Configuration', status: 'todo' },
             { label: 'Déplacer un message', status: 'dropped' },
@@ -27,7 +27,7 @@ export default [
             { label: 'Détection des changements du Cozy', status: 'done' },
             { label: 'Propagation des modifications en local', status: 'done' },
             { label: 'Interface', status: 'done' },
-            { label: 'Packaging', status: 'done' },
+            { label: 'Packaging', status: 'doing' },
         ],
     },
     {
@@ -35,7 +35,7 @@ export default [
         cards: [
             { label: 'Préparation / Etude', status: 'done' },
             { label: 'Interface', status: 'done' },
-            { label: 'Fichiers', status: 'done' },
+            { label: 'Fichiers', status: 'doing' },
             { label: 'Packaging', status: 'doing' },
             { label: 'Service', status: 'dropped' },
             { label: 'Contacts', status: 'dropped' },
