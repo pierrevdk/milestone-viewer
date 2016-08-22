@@ -2,6 +2,7 @@ import s0 from './s0/index';
 import s3 from './s3/index';
 import s4 from './s4/index';
 import s5 from './s5/index';
+import s6 from './s6/index';
 
 export default [
     {
@@ -19,5 +20,9 @@ export default [
     {
         date: '2016-08-05',
         cards: s5,
+    },
+    {
+        date: '2016-08-22',
+        cards: s6,
     },
 ];
