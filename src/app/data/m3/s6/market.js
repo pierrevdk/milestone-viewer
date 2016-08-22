@@ -4,7 +4,7 @@ export default [
         cards: [
             { label: 'Page sur le site', status: 'done' },
             { label: 'Brochure', status: 'dropped' },
-            { label: 'Choix des évenements', status: 'doing' },
+            { label: 'Choix des évenements', status: 'done' },
         ],
     },
     { label: 'Communauté',
